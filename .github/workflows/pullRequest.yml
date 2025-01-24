@@ -21,16 +21,16 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1 # Ensure the Ruby version matches your local setup
+          ruby-version: 3.1
 
       # Step 3: Install dependencies via Bundler
       - name: Install dependencies
         run: |
           bundle config set path 'vendor/bundle'
           bundle install
-        working-directory: . # Ensure this points to where the Gemfile is located
+        working-directory: ./CICD
 
       # Step 4: Run tests using Fastlane
       - name: Run Tests with Fastlane
         run: bundle exec fastlane run_tests
-        working-directory: . # Ensure this points to where the Fastfile is located
+        working-directory: ./CICD/FastLane
