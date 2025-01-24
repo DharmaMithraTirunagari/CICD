@@ -1,0 +1,18 @@
+
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Run unit tests for CDTests target"
+  lane :run_tests do
+    scan(
+      project: "CICD.xcodeproj",
+      scheme: "CICD",
+      devices: ["iPhone 14"],
+      only_testing: ["CICDTests"],
+      clean: true,
+      output_types: "html,junit",
+      output_directory: "FastLane/test_output"
+    )
+  end
+end

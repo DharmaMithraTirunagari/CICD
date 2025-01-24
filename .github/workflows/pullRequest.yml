@@ -1,0 +1,41 @@
+#
+//  pullRequest.yml
+//  CICD
+//
+//  Created by Srikanth Kyatham on 1/24/25.
+//
+
+name: iOS CI Pipeline
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: macos-latest
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Ruby environment
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1 # Use a version compatible with your setup
+
+      # Step 3: Install dependencies via Bundler
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install --path vendor/bundle
+
+      # Step 4: Run tests using Fastlane
+      - name: Run Tests with Fastlane
+        run: bundle exec fastlane run_tests

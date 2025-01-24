@@ -58,6 +58,21 @@
 			path = CICDUITests;
 			sourceTree = "<group>";
 		};
+		0064EA902D442AA9007B71FC /* .github */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = .github;
+			sourceTree = "<group>";
+		};
+		0064EA952D442BAA007B71FC /* FastLane */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FastLane;
+			sourceTree = "<group>";
+		};
+		0064EA992D442C6F007B71FC /* Gemfile */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Gemfile;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +103,9 @@
 		0064EA512D44290D007B71FC = {
 			isa = PBXGroup;
 			children = (
+				0064EA992D442C6F007B71FC /* Gemfile */,
+				0064EA952D442BAA007B71FC /* FastLane */,
+				0064EA902D442AA9007B71FC /* .github */,
 				0064EA5C2D44290D007B71FC /* CICD */,
 				0064EA732D44290F007B71FC /* CICDTests */,
 				0064EA7D2D44290F007B71FC /* CICDUITests */,
@@ -122,6 +140,9 @@
 			);
 			fileSystemSynchronizedGroups = (
 				0064EA5C2D44290D007B71FC /* CICD */,
+				0064EA902D442AA9007B71FC /* .github */,
+				0064EA952D442BAA007B71FC /* FastLane */,
+				0064EA992D442C6F007B71FC /* Gemfile */,
 			);
 			name = CICD;
 			packageProductDependencies = (
