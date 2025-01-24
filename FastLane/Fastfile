@@ -3,7 +3,7 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Run unit tests for CDTests target"
+  desc "Run unit tests for CICDTests target"
   lane :run_tests do
     scan(
       project: "CICD.xcodeproj",
@@ -12,7 +12,8 @@ platform :ios do
       only_testing: ["CICDTests"],
       clean: true,
       output_types: "html,junit",
-      output_directory: "FastLane/test_output"
+      output_directory: "test_output"
     )
   end
 end
+
