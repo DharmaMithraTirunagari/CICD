@@ -30,7 +30,11 @@ jobs:
           bundle install
         working-directory: ./CICD
 
-      # Step 4: Run tests using Fastlane
+      # Step 4: Run Tests with Fastlane
       - name: Run Tests with Fastlane
         run: bundle exec fastlane run_tests
         working-directory: ./CICD/FastLane
+        
+        - name: Debug directory structure
+          run: ls -R
+          working-directory: ./CICD
