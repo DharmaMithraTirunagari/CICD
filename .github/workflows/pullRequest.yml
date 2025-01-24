@@ -1,5 +1,3 @@
-
-
 name: iOS CICD Pipeline
 
 on:
@@ -23,14 +21,16 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1 # Use a version compatible with your setup
+          ruby-version: 3.1 # Ensure the Ruby version matches your local setup
 
       # Step 3: Install dependencies via Bundler
       - name: Install dependencies
         run: |
-          gem install bundler
-          bundle install --path vendor/bundle
+          bundle config set path 'vendor/bundle'
+          bundle install
+        working-directory: . # Ensure this points to where the Gemfile is located
 
       # Step 4: Run tests using Fastlane
       - name: Run Tests with Fastlane
         run: bundle exec fastlane run_tests
+        working-directory: . # Ensure this points to where the Fastfile is located
